@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-primary: #282C33;
+  --text-primary: #ABB2BF;
+  --text-white: #FFFFFF;
+  --accent-color: #C778DD;
+  --border-color: #ABB2BF;
+  --font-main: 'Fira Code', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-white);
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Highlighted keywords */
+.highlight {
+  color: var(--accent-color);
+}
+
+.text-white {
+  color: var(--text-white);
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-block;
+  padding: 8px 16px;
+  background: transparent;
+  color: var(--text-white);
+  border: 1px solid var(--accent-color);
+  font-family: var(--font-main);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: rgba(199, 120, 221, 0.2);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary); 
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color); 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-primary); 
+}
