@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --bg-primary: #282C33;
+  --bg-primary: #000000;
   --text-primary: #ABB2BF;
   --text-white: #FFFFFF;
   --accent-color: #C778DD;
@@ -24,7 +24,7 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 h1, h2, h3, h4, h5, h6 {

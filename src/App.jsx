@@ -35,7 +35,7 @@ export default function App() {
 
       <div className="main-content">
         <MobileHeader toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
-        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+        <div style={{ maxWidth: "100%", margin: "0 auto" }}>
           <Hero />
           <Quote />
           <Projects />

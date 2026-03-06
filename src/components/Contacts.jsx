@@ -1,14 +1,18 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { MessageSquare, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
+import { SiDiscord } from "react-icons/si";
 import { fadeInUp } from "../utils/animations";
 
 export default function Contacts() {
     return (
         <section className="section" id="contacts">
-            <h2 className="section-title">
-                <span>#</span>contacts
-            </h2>
+            <div>
+                <span className="section-number">05</span>
+                <h2 className="section-title">
+                    <span>#</span>contacts
+                </h2>
+            </div>
             <div className="contacts-container">
                 <motion.div
                     className="contacts-text"
@@ -18,8 +22,8 @@ export default function Contacts() {
                     variants={fadeInUp}
                 >
                     <p>
-                        I'm interested in freelance opportunities. However, if you have
-                        other request or question, don't hesitate to contact me
+                       I'm open to discussing new opportunities, collaborations, or interesting projects. If you have a question or would like to work together, feel free to reach out.
+
                     </p>
                 </motion.div>
 
@@ -32,11 +36,11 @@ export default function Contacts() {
                     whileHover={{ borderColor: "#C778DD" }}
                 >
                     <div className="contacts-box-title">Message me here</div>
-                    <a href="#" className="contact-item">
-                        <MessageSquare size={18} /> !Elias#3519
+                    <a href="https://discord.com/users/ashikrahman8333" target="_blank" rel="noreferrer" className="contact-item">
+                        <SiDiscord size={18} /> ashikrahman8333
                     </a>
-                    <a href="#" className="contact-item">
-                        <Mail size={18} /> elias@elias.me
+                    <a href="mailto:mail4ashh@gmail.com" className="contact-item">
+                        <Mail size={18} /> mail4ashh@gmail.com
                     </a>
                 </motion.div>
             </div>

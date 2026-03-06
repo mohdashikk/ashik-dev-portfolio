@@ -1,11 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Code, Database, Layers, Link, Terminal } from "lucide-react";
+import { Code, Database, Layers, Link, Terminal, Server } from "lucide-react";
 import {
-    SiJavascript, SiTypescript, SiPython, SiLua, SiReact, SiVuedotjs,
-    SiExpress, SiFlask, SiHtml5, SiCss, SiSass, SiJinja, SiTailwindcss,
-    SiPostgresql, SiMongodb, SiSqlite, SiNodedotjs, SiArchlinux,
-    SiNeovim, SiGit, SiFigma
+    SiJavascript, SiTypescript, SiReact, SiPhp,
+    SiExpress, SiHtml5, SiCss, SiSass, SiLess, SiTailwindcss,
+    SiPostgresql, SiSqlite, SiNodedotjs, SiNextdotjs,
+    SiGit, SiFigma,
+    SiDocker, SiStrapi, SiClerk, SiN8N, SiShadcnui, SiGithubactions
 } from "react-icons/si";
 import { staggerContainer, scaleUp } from "../utils/animations";
 
@@ -17,8 +18,7 @@ export default function Skills() {
             list: [
                 { name: "JavaScript", icon: <SiJavascript /> },
                 { name: "TypeScript", icon: <SiTypescript /> },
-                { name: "Python", icon: <SiPython /> },
-                { name: "Lua", icon: <SiLua /> },
+                { name: "PHP", icon: <SiPhp /> },
             ],
         },
         {
@@ -26,7 +26,7 @@ export default function Skills() {
             icon: <Database size={18} />,
             list: [
                 { name: "PostgreSQL", icon: <SiPostgresql /> },
-                { name: "MongoDB", icon: <SiMongodb /> },
+                { name: "Neon", icon: <Server size={14} /> },
                 { name: "SQLite", icon: <SiSqlite /> },
             ],
         },
@@ -35,10 +35,11 @@ export default function Skills() {
             icon: <Layers size={18} />,
             list: [
                 { name: "React", icon: <SiReact /> },
-                { name: "Vue.js", icon: <SiVuedotjs /> },
+                { name: "Next.js", icon: <SiNextdotjs /> },
                 { name: "Express.js", icon: <SiExpress /> },
-                { name: "Flask", icon: <SiFlask /> },
                 { name: "Node.js", icon: <SiNodedotjs /> },
+                { name: "Strapi", icon: <SiStrapi /> },
+                { name: "shadcn/ui", icon: <SiShadcnui /> },
             ],
         },
         {
@@ -48,8 +49,9 @@ export default function Skills() {
                 { name: "HTML5", icon: <SiHtml5 /> },
                 { name: "CSS3", icon: <SiCss /> },
                 { name: "SCSS", icon: <SiSass /> },
+                { name: "Less", icon: <SiLess /> },
                 { name: "Tailwind", icon: <SiTailwindcss /> },
-                { name: "Jinja", icon: <SiJinja /> },
+                { name: "Clerk", icon: <SiClerk /> },
             ],
         },
         {
@@ -57,27 +59,31 @@ export default function Skills() {
             icon: <Terminal size={18} />,
             list: [
                 { name: "Git", icon: <SiGit /> },
-                { name: "Neovim", icon: <SiNeovim /> },
                 { name: "Figma", icon: <SiFigma /> },
-                { name: "Arch Linux", icon: <SiArchlinux /> },
+                { name: "Docker", icon: <SiDocker /> },
+                { name: "CI/CD", icon: <SiGithubactions /> },
+                { name: "n8n", icon: <SiN8N /> },
             ],
         },
     ];
 
     return (
         <section className="section" id="skills">
-            <h2 className="section-title">
-                <span>#</span>skills
-            </h2>
+            <div>
+                <span className="section-number">02</span>
+                <h2 className="section-title">
+                    <span>#</span>skills
+                </h2>
+            </div>
             <div className="skills-container">
                 <div className="skills-left">
                     <motion.div
                         className="terminal-window"
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        whileHover={{ scale: 1.02, boxShadow: "0px 10px 30px rgba(199, 120, 221, 0.2)" }}
+                        whileHover={{ y: -5, boxShadow: "0px 15px 40px rgba(199, 120, 221, 0.25)" }}
                     >
                         <div className="terminal-header">
                             <div className="terminal-buttons">
@@ -85,17 +91,17 @@ export default function Skills() {
                                 <span className="terminal-btn yellow"></span>
                                 <span className="terminal-btn green"></span>
                             </div>
-                            <span className="terminal-title">~/elias/skills</span>
+                            <span className="terminal-title">bash — ashik@portfolio:~</span>
                         </div>
                         <div className="terminal-body">
                             <p><span className="keyword">const</span> <span className="variable">developer</span> = {"{"}</p>
-                            <p>&nbsp;&nbsp;name: <span className="string">"Elias"</span>,</p>
-                            <p>&nbsp;&nbsp;role: <span className="string">"Frontend"</span>,</p>
-                            <p>&nbsp;&nbsp;skills: [<span className="string">"React"</span>, <span className="string">"TypeScript"</span>, <span className="string">"Figma"</span>],</p>
-                            <p>&nbsp;&nbsp;hobby: <span className="string">"Crafting UI"</span>,</p>
-                            <p>{"};"}</p>
+                            <p>&nbsp;&nbsp;name: <span className="string">"Ashik"</span>,</p>
+                            <p>&nbsp;&nbsp;role: <span className="string">"Full-Stack Developer"</span>,</p>
+                            <p>&nbsp;&nbsp;skills: [<span className="string">"React"</span>, <span className="string">"Node"</span>, <span className="string">"Express"</span>, <span className="string">"Figma"</span>],</p>
+                            <p>&nbsp;&nbsp;hobby: <span className="string">"Crafting Software"</span>,</p>
+                            <p>{"}"}</p>
                             <br />
-                            <p className="command"><span className="keyword">&gt;</span> developer.execute()<span className="cursor">_</span></p>
+                            <p className="command"><span className="keyword">&gt;</span> ./execute_skills.sh<span className="cursor">_</span></p>
                         </div>
                     </motion.div>
 
@@ -114,18 +120,17 @@ export default function Skills() {
                 >
                     {skillCategories.map((cat, idx) => (
                         <motion.div
-                            className="skill-box"
+                            className="skill-card-modern"
                             key={idx}
                             variants={scaleUp}
-                            whileHover={{ scale: 1.03, borderColor: "#C778DD" }}
                         >
-                            <div className="skill-title">
+                            <div className="skill-card-header">
                                 {cat.icon}
                                 {cat.title}
                             </div>
-                            <div className="skill-list">
+                            <div className="skill-card-body">
                                 {cat.list.map((skill, sIdx) => (
-                                    <div key={sIdx} className="skill-item">
+                                    <div key={sIdx} className="skill-tag">
                                         {skill.icon}
                                         <span>{skill.name}</span>
                                     </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Github, Twitter, Figma } from "lucide-react";
 
@@ -6,13 +6,36 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
     const [activeNav, setActiveNav] = useState("#home");
 
     const navs = [
-        { id: "#home", label: "home" },
-        { id: "#works", label: "works" },
-        { id: "#skills", label: "skills" },
-        { id: "#about-me", label: "about-me" },
-        { id: "#experience", label: "experience" },
-        { id: "#contacts", label: "contacts" },
+        { id: "home",       label: "home" },
+        { id: "works",      label: "works" },
+        { id: "skills",     label: "skills" },
+        { id: "about-me",   label: "about-me" },
+        { id: "experience", label: "experience" },
+        { id: "contacts",   label: "contacts" },
     ];
+
+    // Scroll-based active section detection
+    useEffect(() => {
+        const observers = [];
+
+        navs.forEach(({ id }) => {
+            const el = document.getElementById(id);
+            if (!el) return;
+
+            const observer = new IntersectionObserver(
+                ([entry]) => {
+                    if (entry.isIntersecting) {
+                        setActiveNav(`#${id}`);
+                    }
+                },
+                { threshold: 0.15 }
+            );
+            observer.observe(el);
+            observers.push(observer);
+        });
+
+        return () => observers.forEach(o => o.disconnect());
+    }, []);
 
     return (
         <>
@@ -28,20 +51,20 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
             >
                 <div
                     className="sidebar-logo"
-                    onClick={() => window.scrollTo({ top: 0 })}
+                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 >
                     <div className="logo-icon"></div>
-                    <span>Elias</span>
+                    <span>Ashik</span>
                 </div>
 
                 <nav className="sidebar-nav">
                     {navs.map((nav, idx) => (
                         <motion.a
                             key={idx}
-                            href={nav.id}
-                            className={`nav-item ${activeNav === nav.id ? "active" : ""}`}
-                            onClick={(e) => {
-                                setActiveNav(nav.id);
+                            href={`#${nav.id}`}
+                            className={`nav-item ${activeNav === `#${nav.id}` ? "active" : ""}`}
+                            onClick={() => {
+                                setActiveNav(`#${nav.id}`);
                                 if (window.innerWidth <= 1024) toggleSidebar();
                             }}
                             whileHover={{ x: 10, color: "#FFFFFF" }}
@@ -68,3 +91,4 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
         </>
     );
 }
+

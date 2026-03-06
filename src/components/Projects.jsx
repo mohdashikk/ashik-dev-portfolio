@@ -51,78 +51,61 @@ export default function Projects() {
                 style={{ bottom: 150, left: 30, width: 60, height: 60, opacity: 0.3, zIndex: 1 }}
             ></div>
 
-            <div className="projects-header">
-                <h2 className="section-title" style={{ marginBottom: 0 }}>
-                    <span>#</span>projects
-                </h2>
-                <a href="#" className="view-all">
-                    View all <ArrowRight size={18} />
-                </a>
+            <div className="projects-header" style={{ marginBottom: "30px", display: "flex", alignItems: "flex-end", justifyContent: "space-between" }}>
+                <div style={{ flex: 1 }}>
+                    <span className="section-number">01</span>
+                    <h2 className="section-title" style={{ marginBottom: 0 }}>
+                        <span>#</span>projects
+                    </h2>
+                </div>
+                
+                <div style={{ flex: 1, textAlign: "center", color: 'var(--text-primary)', fontSize: '14.4px', fontWeight: 600, letterSpacing: '0.05em', paddingBottom: '10px' }}>
+                    //WORKS
+                </div>
+
+                <div style={{ flex: 1, textAlign: "right", color: 'var(--text-primary)', fontSize: '14.4px', fontWeight: 500, letterSpacing: '0.05em', paddingBottom: '10px' }}>
+                    2019 — 2026
+                </div>
             </div>
             <motion.div
-                className="project-grid"
+                className="project-list"
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.1 }}
+                viewport={{ once: true, amount: 0.05 }}
                 variants={staggerContainer}
             >
                 {projects.map((p, idx) => (
                     <motion.div
-                        className="project-card"
+                        className="project-row"
                         key={idx}
                         variants={fadeInUp}
                     >
-                        <div className="project-top-bar">
-                            <span className="window-dots">
-                                <i></i><i></i><i></i>
-                            </span>
-                            <span className="window-title">~/{p.name.toLowerCase()}</span>
+                        {/* Area 1: Actions / Button */}
+                        <div className="project-actions">
+                            {idx === 0 && (
+                                <a href="#" className="view-all" style={{ textDecoration: 'none', padding: 0 }}>
+                                    View all <ArrowRight size={18} />
+                                </a>
+                            )}
                         </div>
-                        <div className="project-img-container">
-                            <img src={p.img} alt={p.name} className="project-img" />
-                            <div className="project-img-overlay">
-                                <span className="overlay-text">
-                                    <ExternalLink size={18} style={{ marginRight: 8, verticalAlign: "bottom" }} />
-                                    View Project
-                                </span>
+
+                        {/* Area 2: Info (Title, Desc, Techs) */}
+                        <div className="project-info">
+                            <div className="project-title-wrapper">
+                                <h3 className="experience-heading" style={{ fontSize: "1.8rem" }}>
+                                    <span>#</span>{p.name.toLowerCase()}
+                                </h3>
+                                <ArrowRight className="project-arrow" size={24} />
+                            </div>
+                            <p className="project-description">{p.desc}</p>
+                            <div className="project-tech-label">
+                                {p.techs.join(" / ")}
                             </div>
                         </div>
-                        <div className="project-techs">
-                            {p.techs.map((tech, tIdx) => (
-                                <span key={tIdx} className="tech-badge">{tech}</span>
-                            ))}
-                        </div>
-                        <div className="project-body">
-                            <h3 className="project-name text-white">{p.name}</h3>
-                            <p className="project-desc">{p.desc}</p>
-                            <div className="project-links">
-                                {p.live && (
-                                    <motion.button
-                                        whileHover={{ scale: 1.05 }}
-                                        whileTap={{ scale: 0.95 }}
-                                        className="btn-primary"
-                                        style={{ display: "flex", alignItems: "center", gap: "8px" }}
-                                    >
-                                        Live <ExternalLink size={16} />
-                                    </motion.button>
-                                )}
-                                {p.cached && (
-                                    <motion.button
-                                        whileHover={{ scale: 1.05 }}
-                                        whileTap={{ scale: 0.95 }}
-                                        className="btn-primary"
-                                        style={{
-                                            display: "flex",
-                                            alignItems: "center",
-                                            gap: "8px",
-                                            color: "#ABB2BF",
-                                            borderColor: "#ABB2BF",
-                                        }}
-                                    >
-                                        Cached <Server size={16} />
-                                    </motion.button>
-                                )}
-                            </div>
+
+                        {/* Area 3: Image / Mockup showcase */}
+                        <div className="project-showcase">
+                            <img src={p.img} alt={p.name} className="project-mockup" />
                         </div>
                     </motion.div>
                 ))}

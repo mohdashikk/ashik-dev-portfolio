@@ -13,9 +13,9 @@ export default function Quote() {
         >
             <div className="quote-content">
                 <div className="quote-box">
-                    With great power comes great electricity bill
+                    The only way to do great work is to love what you do.
                 </div>
-                <div className="quote-author">- Dr. Who</div>
+                <div className="quote-author">- Steve Jobs</div>
             </div>
         </motion.section>
     );

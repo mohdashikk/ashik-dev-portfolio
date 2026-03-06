@@ -14,7 +14,7 @@ export default function MobileHeader({ toggleSidebar }) {
                         marginLeft: "10px",
                     }}
                 >
-                    Elias
+                    Ashik
                 </span>
             </div>
             <button

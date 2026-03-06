@@ -10,14 +10,14 @@ export default function Footer() {
                     <div className="footer-logo-row">
                         <div className="logo-icon"></div>
                         <strong className="text-white" style={{ fontSize: "1.2rem" }}>
-                            Elias
+                            Ashik
                         </strong>
                         <span className="footer-email" style={{ marginLeft: 15 }}>
-                            elias@elias-dev.ml
+                            mail4ashh@gmail.com
                         </span>
                     </div>
                     <div className="footer-desc">
-                        Web designer and front-end developer
+                        Front-end Engineer and Full-stack Developer
                     </div>
                 </div>
                 <div>
@@ -35,7 +35,7 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <div className="footer-bottom">© Copyright 2026. Made by Elias</div>
+            <div className="footer-bottom">© Copyright 2026. Made by Ashik</div>
         </footer>
     );
 }
