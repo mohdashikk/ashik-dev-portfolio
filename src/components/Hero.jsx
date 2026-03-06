@@ -30,21 +30,21 @@ export default function Hero() {
             {steps[step]}
           </motion.div>
         </AnimatePresence>
-
-        {/* Bottom description */}
-        <motion.p
-          className="hero-bottom-desc"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.8 }}
-        >
-          Front-End Developer and passionate full-stack learner. My journey in
-          tech is driven by curiosity, creativity, and a constant desire to
-          improve. Over the years, I’ve explored different technologies and
-          grown into a developer who truly enjoys building smooth and intuitive
-          digital experiences.
-        </motion.p>
       </div>
+
+      {/* Bottom description */}
+      <motion.p
+        className="hero-bottom-desc"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6, duration: 0.8 }}
+      >
+        Front-End Developer and passionate full-stack learner. My journey in
+        tech is driven by curiosity, creativity, and a constant desire to
+        improve. Over the years, I’ve explored different technologies and
+        grown into a developer who truly enjoys building smooth and intuitive
+        digital experiences.
+      </motion.p>
     </section>
   );
 }
