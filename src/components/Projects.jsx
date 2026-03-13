@@ -79,6 +79,7 @@ export default function Projects() {
                         className="project-row"
                         key={idx}
                         variants={fadeInUp}
+                        style={{ marginBottom: "40px" }}
                     >
                         {/* Area 1: Actions / Button */}
                         <div className="project-actions">

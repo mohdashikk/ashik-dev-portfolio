@@ -58,6 +58,7 @@ export default function AboutMe() {
           className="dots-pattern"
           style={{ bottom: 20, right: 30, zIndex: 1 }}
         ></div>
+        
         <img src="/dark_about.png" alt="Elias" />
       </motion.div>
     </section>
