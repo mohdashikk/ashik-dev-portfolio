@@ -155,16 +155,21 @@
   justify-content: center;
   /* A slight top padding visually centers the huge text against the bottom description */
   padding-top: 5vh;
+  overflow: visible;
 }
 
-/* Each text item is absolutely placed, fully centered */
+/* Each text item is absolutely placed, fully centered within the flex container */
 .hero-stage-text {
   position: absolute;
-  inset: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  white-space: nowrap;
+  width: auto;
 }
 
 /* "Ashik" — white heavy block */
