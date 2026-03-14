@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
 import SnakeBackground from "./SnakeBackground";
 
 // Step 0 = "Ashik Is", Step 1 = "Developer", Step 2 = "Designer"
@@ -19,30 +20,16 @@ export default function Hero() {
     <section className="section hero-section" id="home">
       <SnakeBackground />
       {/* 
-         Added a dedicated, fixed-size zone for snake avoidance. 
-         This ensures the snake stays clear of the area regardless of whether the word is short (Ashik) or long (Developer).
+         Removed the dedicated fixed-size zone for snake avoidance 
+         to allow for tighter collision matching the animated letters.
       */}
-      <div 
-        className="hero-collision-zone" 
-        data-snake-obstacle="true"
-        style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: 'min(95vw, 1100px)', // Prereserve space for longest words
-          height: '35vh',            // Taller to fully cover the vertical movement
-          pointerEvents: 'none',
-          opacity: 0,
-          zIndex: -1
-        }} 
-      />
 
       <div className="hero-stage">
         <AnimatePresence mode="wait">
           <motion.div
             key={step}
             className={`hero-stage-text ${step === 0 ? "text-cursive" : "text-block"}`}
+            data-snake-obstacle="true"
             initial={{ opacity: 0, x: "-50%", y: "-40%" }}
             animate={{ opacity: 1, x: "-50%", y: "-50%" }}
             exit={{ opacity: 0, x: "-50%", y: "-60%" }}
@@ -60,11 +47,13 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6, duration: 0.8 }}
       >
-        Front-End Developer and passionate full-stack learner. My journey in
-        tech is driven by curiosity, creativity, and a constant desire to
-        improve. Over the years, I’ve explored different technologies and
-        grown into a developer who truly enjoys building smooth and intuitive
-        digital experiences.
+        <span className="glitch-text">
+          Front-End Developer and passionate full-stack learner. My journey in
+          tech is driven by curiosity, creativity, and a constant desire to
+          improve. Over the years, I’ve explored different technologies and
+          grown into a developer who truly enjoys building smooth and intuitive
+          digital experiences.
+        </span>
       </motion.p>
     </section>
   );

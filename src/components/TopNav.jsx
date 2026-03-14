@@ -51,7 +51,7 @@ export default function TopNav() {
 
     return (
         <div className={`top-nav-container ${scrolled ? "scrolled" : ""}`}>
-            <nav className="top-nav">
+            <nav className="top-nav" data-snake-obstacle="true">
                 {navs.map((nav, idx) => (
                     <a
                         key={idx}
