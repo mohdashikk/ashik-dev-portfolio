@@ -1,116 +1,135 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, ExternalLink, Server } from "lucide-react";
+import { ArrowRight, ExternalLink, Github } from "lucide-react";
 import { fadeInUp, staggerContainer } from "../utils/animations";
 
 export default function Projects() {
-    const projects = [
-        {
-            img: "/proj_chert.png",
-            techs: ["HTML", "SCSS", "Python", "Flask"],
-            name: "ChertNodes",
-            desc: "Minecraft servers hosting",
-            live: true,
-            cached: true,
-        },
-        {
-            img: "/proj_protect.png",
-            techs: ["React", "Express", "Discord.js", "Node.js"],
-            name: "ProtectX",
-            desc: "Discord anti-crash bot",
-            live: true,
-            cached: false,
-        },
-        {
-            img: "/proj_kahoot.png",
-            techs: ["CSS", "Express", "Node.js"],
-            name: "Kahoot Answers Viewer",
-            desc: "Get answers to your kahoot quiz",
-            live: true,
-            cached: false,
-        },
-    ];
+  const projects = [
+    {
+      img: "/proj_lifedrop.png",
+      techs: ["React", "Express", "Node.js", "MySQL", "JWT"],
+      name: "LifeDrop",
+      desc: "Scalable full-stack app for managing blood donors with secure authentication and role-based access.",
+      live: "https://bloodbank.ashikrahman.in/",
+      github: "https://github.com/mohdashikk/bloodbank",
+      accent: "#c778dd"
+    },
+    {
+      img: "/proj_meal.png",
+      techs: ["React", "OpenAI API", "Tailwind CSS"],
+      name: "Mealify",
+      desc: "AI-powered meal generator that creates personalized recipes in real-time using React, and AI API integration.",
+      live: "https://aimeal.ashikrahman.in/",
+      github: "https://github.com/mohdashikk/ai-meal-generator",
+      accent: "#61afef"
+    },
+    {
+      img: "/proj_ats.png",
+      techs: ["React", "Express", "Node.js", "MySQL", "JWT", "Tailwind CSS"],
+      name: "ATS",
+      desc: "Built a scalable applicant tracking system using React, Node.js, and MySQL with role-based access control, candidate management, and workflow tracking.",
+      live: "#",
+      github: "#",
+      accent: "#98c379"
+    },
+  ];
 
-    return (
-        <section className="section" id="works">
-            {/* Background Decorations */}
-            <div
-                className="dots-pattern"
-                style={{ top: 120, left: -20, opacity: 0.3, zIndex: 1 }}
-            ></div>
-            <div
-                className="shape-square"
-                style={{ top: 300, right: -40, width: 100, height: 100, opacity: 0.2, zIndex: 1 }}
-            ></div>
-            <div
-                className="dots-pattern"
-                style={{ bottom: 50, right: 100, opacity: 0.2, zIndex: 1 }}
-            ></div>
-            <div
-                className="shape-square"
-                style={{ bottom: 150, left: 30, width: 60, height: 60, opacity: 0.3, zIndex: 1 }}
-            ></div>
+  return (
+    <section className="section" id="works">
+      {/* Background Decorations */}
+      <div
+        className="dots-pattern"
+        style={{ top: 120, left: -20, opacity: 0.1, zIndex: 1 }}
+      ></div>
+      <div
+        className="shape-square"
+        style={{
+          top: 300,
+          right: -40,
+          width: 100,
+          height: 100,
+          opacity: 0.05,
+          zIndex: 1,
+        }}
+      ></div>
 
-            <div className="projects-header" style={{ marginBottom: "30px", display: "flex", alignItems: "flex-end", justifyContent: "space-between" }}>
-                <div style={{ flex: 1 }}>
-                    <span className="section-number">01</span>
-                    <h2 className="section-title" style={{ marginBottom: 0 }}>
-                        <span>#</span>projects
-                    </h2>
-                </div>
-                
-                <div style={{ flex: 1, textAlign: "center", color: 'var(--text-primary)', fontSize: '14.4px', fontWeight: 600, letterSpacing: '0.05em', paddingBottom: '10px' }}>
-                    //WORKS
-                </div>
+      <div className="projects-header" style={{ marginBottom: "60px", display: "flex", flexDirection: "column", gap: "10px" }}>
+        <div>
+          <span className="section-number" style={{ marginBottom: "5px" }}>01</span>
+        </div>
+        <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", width: "100%" }}>
+          <div style={{ flex: 1 }}>
+            <h2 className="section-title" style={{ marginBottom: 0, gap: "15px" }}>
+              <span>#</span>projects
+            </h2>
+          </div>
+          <div style={{ flex: 1, textAlign: "center", color: 'var(--text-primary)', fontSize: '14.4px', fontWeight: 600, letterSpacing: '0.05em', paddingBottom: '10px' }}>
+            //WORKS
+          </div>
+          <div style={{ flex: 1, textAlign: "right", color: 'var(--text-primary)', fontSize: '14.4px', fontWeight: 500, letterSpacing: '0.05em', paddingBottom: '10px' }}>
+            2019 — 2026
+          </div>
+        </div>
+      </div>
 
-                <div style={{ flex: 1, textAlign: "right", color: 'var(--text-primary)', fontSize: '14.4px', fontWeight: 500, letterSpacing: '0.05em', paddingBottom: '10px' }}>
-                    2019 — 2026
-                </div>
-            </div>
-            <motion.div
-                className="project-list"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.05 }}
-                variants={staggerContainer}
-            >
-                {projects.map((p, idx) => (
-                    <motion.div
-                        className="project-row"
-                        key={idx}
-                        variants={fadeInUp}
-                        style={{ marginBottom: "40px" }}
-                    >
-                        {/* Area 1: Actions / Button */}
-                        <div className="project-actions">
-                            {idx === 0 && (
-                                <a href="#" className="view-all" style={{ textDecoration: 'none', padding: 0 }}>
-                                    View all <ArrowRight size={18} />
-                                </a>
-                            )}
-                        </div>
-
-                        {/* Area 2: Info (Title, Desc, Techs) */}
-                        <div className="project-info">
-                            <div className="project-title-wrapper">
-                                <h3 className="experience-heading" style={{ fontSize: "1.8rem" }}>
-                                    <span>#</span>{p.name.toLowerCase()}
-                                </h3>
-                                <ArrowRight className="project-arrow" size={24} />
-                            </div>
-                            <p className="project-description">{p.desc}</p>
-                            <div className="project-tech-label">
-                                {p.techs.join(" / ")}
-                            </div>
-                        </div>
-
-                        {/* Area 3: Image / Mockup showcase */}
-                        <div className="project-showcase">
-                            <img src={p.img} alt={p.name} className="project-mockup" />
-                        </div>
-                    </motion.div>
+      <motion.div
+        className="premium-project-list"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        variants={staggerContainer}
+      >
+        {projects.map((p, idx) => (
+          <motion.div
+            className="premium-project-row"
+            key={idx}
+            variants={fadeInUp}
+          >
+            {/* Left Content Side */}
+            <div className="project-content-side">
+              <div className="project-index">0{idx + 1}</div>
+              <div className="project-title-area">
+                <h3 className="premium-project-name">
+                  <span>#</span>{p.name.toLowerCase()}
+                </h3>
+              </div>
+              
+              <p className="premium-project-desc">{p.desc}</p>
+              
+              <div className="tag-container">
+                {p.techs.map((tag, i) => (
+                  <span key={i} className="tech-pill">{tag}</span>
                 ))}
-            </motion.div>
-        </section>
-    );
+              </div>
+
+              <div style={{ display: "flex", gap: "20px", marginTop: "20px" }}>
+                <a href={p.live}  target="_blank" className="premium-cta">
+                  <span>Live Website</span>
+                  <ExternalLink size={18} />
+                  <div className="cta-underline"></div>
+                </a>
+                <a href={p.github} target="_blank" className="premium-cta">
+                  <span>GitHub</span>
+                  <Github size={18} />
+                  <div className="cta-underline"></div>
+                </a>
+              </div>
+            </div>
+
+            {/* Right Image Side */}
+            <div className="project-visual-side">
+              <div className="image-wrapper">
+                <img src={p.img} alt={p.name} className="premium-mockup" />
+                <div className="image-overlay"></div>
+                <div className="glass-glow"></div>
+              </div>
+            </div>
+            
+            <div className="row-divider"></div>
+          </motion.div>
+        ))}
+      </motion.div>
+    </section>
+  );
 }
+
