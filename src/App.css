@@ -246,7 +246,7 @@ img {
   display: flex;
   align-items: center;
   gap: 15px;
-  font-size: clamp(1.4rem, 4.5vw, 2.2rem); /* Robust section titles */
+  font-size: clamp(2rem, 7vw, 4rem); /* More prominent section titles */
   margin-bottom: 40px;
 }
 
@@ -1180,7 +1180,6 @@ img {
 
 @media (max-width: 768px) {
   .section { padding: 50px 0; }
-  .section-title { font-size: 1.5rem; }
   .hero-section { padding-top: 100px !important; height: auto; min-height: 100vh; }
   .hero-stage { min-height: 250px; }
   .hero-bottom-desc { font-size: 0.85rem; padding: 20px; text-align: center; }
@@ -1198,7 +1197,6 @@ img {
 @media (max-width: 480px) {
   .top-nav { font-size: 0.8rem; gap: 5px; padding: 5px 10px; }
   .hero-stage-text.text-cursive, .hero-stage-text.text-block { font-size: 2rem; }
-  .section-title { font-size: 1.25rem; }
   .timeline-description { font-size: 0.9rem; }
   .tech-pill { font-size: 0.7rem; padding: 4px 10px; }
 }
