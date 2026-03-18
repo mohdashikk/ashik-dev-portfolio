@@ -246,7 +246,7 @@ img {
   display: flex;
   align-items: center;
   gap: 15px;
-  font-size: clamp(2rem, 7vw, 4rem); /* More prominent section titles */
+  font-size: clamp(1.8rem, 4vw, 2rem); /* PC stays around 2rem, relative increase on mobile */
   margin-bottom: 40px;
 }
 
@@ -496,8 +496,8 @@ img {
 }
 
 .premium-project-name {
-  font-size: clamp(1.6rem, 5.5vw, 2.8rem); /* Refined, larger but better-scaled projects */
-  font-weight: 700;
+  font-size: clamp(1.5rem, 4vw, 28px);
+  font-weight: 500;
   color: var(--text-white);
   margin: 0;
   line-height: 1.1;
@@ -505,7 +505,7 @@ img {
   display: flex;
   align-items: center;
   gap: 6px;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
   text-transform: lowercase;
 }
 
