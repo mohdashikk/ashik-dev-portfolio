@@ -77,7 +77,9 @@ const Career = () => {
                                     {index !== careerData.length - 1 && <div className="timeline-line"></div>}
                                 </div>
                                 <div className="timeline-content">
-                                    <h3 className="timeline-title">{item.title}</h3>
+                                    <h3 className="timeline-title">
+                                        <span style={{ color: "var(--accent-color)" }}>#</span>{item.title}
+                                    </h3>
                                     <p className="timeline-description">{item.description}</p>
                                     
                                     {item.projects && (

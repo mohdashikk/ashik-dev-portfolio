@@ -57,16 +57,16 @@ export default function Projects() {
         <div>
           <span className="section-number" style={{ marginBottom: "5px" }}>01</span>
         </div>
-        <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", width: "100%" }}>
-          <div style={{ flex: 1 }}>
+        <div className="section-header-flex">
+          <div className="header-column-left">
             <h2 className="section-title" style={{ marginBottom: 0, gap: "15px" }}>
               <span>#</span>projects
             </h2>
           </div>
-          <div style={{ flex: 1, textAlign: "center", color: 'var(--text-primary)', fontSize: '14.4px', fontWeight: 600, letterSpacing: '0.05em', paddingBottom: '10px' }}>
+          <div className="header-column-center">
             //WORKS
           </div>
-          <div style={{ flex: 1, textAlign: "right", color: 'var(--text-primary)', fontSize: '14.4px', fontWeight: 500, letterSpacing: '0.05em', paddingBottom: '10px' }}>
+          <div className="header-column-right">
             2019 — 2026
           </div>
         </div>
