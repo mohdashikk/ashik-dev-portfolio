@@ -59,7 +59,7 @@ export default function AboutMe() {
           style={{ bottom: 20, right: 30, zIndex: 1 }}
         ></div>
         
-        <img src="/dark_about.png" alt="Elias" />
+        <img src="/ashik.png" alt="Elias" />
       </motion.div>
     </section>
   );

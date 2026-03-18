@@ -6,7 +6,7 @@ import {
     SiExpress, SiHtml5, SiCss, SiSass, SiLess, SiTailwindcss,
     SiPostgresql, SiSqlite, SiNodedotjs, SiNextdotjs,
     SiGit, SiFigma,
-    SiDocker, SiStrapi, SiClerk, SiN8N, SiShadcnui, SiGithubactions
+    SiDocker, SiStrapi, SiClerk, SiN8N, SiShadcnui, SiGithubactions, SiSupabase
 } from "react-icons/si";
 import { staggerContainer, scaleUp } from "../utils/animations";
 
@@ -26,6 +26,7 @@ export default function Skills() {
             icon: <Database size={18} />,
             list: [
                 { name: "PostgreSQL", icon: <SiPostgresql /> },
+                { name: "Supabase", icon: <SiSupabase /> },
                 { name: "Neon", icon: <Server size={14} /> },
                 { name: "SQLite", icon: <SiSqlite /> },
             ],

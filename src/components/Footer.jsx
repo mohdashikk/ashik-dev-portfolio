@@ -13,7 +13,7 @@ export default function Footer() {
                             Ashik
                         </strong>
                         <span className="footer-email" style={{ marginLeft: 15 }}>
-                            mail4ashh@gmail.com
+                            mashik.a9@gmail.com
                         </span>
                     </div>
                     <div className="footer-desc">

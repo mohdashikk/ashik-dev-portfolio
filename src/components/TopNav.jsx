@@ -9,7 +9,7 @@ export default function TopNav() {
         { id: "works",      label: "works" },
         { id: "skills",     label: "skills" },
         { id: "about-me",   label: "about-me" },
-        { id: "experience", label: "experience" },
+        { id: "career",     label: "career" },
         { id: "contacts",   label: "contacts" },
     ];
 
